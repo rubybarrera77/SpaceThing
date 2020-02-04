@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 public class Game extends JFrame implements KeyListener {
 
     Board board;
-    boolean spacePressed, rightPressed, leftPressed;
+    boolean spacePressed, rightPressed, leftPressed, enterPressed, pPressed;
 
     public Game(){
 
@@ -26,7 +26,6 @@ public class Game extends JFrame implements KeyListener {
         new Game();
     }
 
-    @Override
     public void keyTyped(KeyEvent e) {
 
     }
@@ -42,6 +41,12 @@ public class Game extends JFrame implements KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             rightPressed = true;
         }
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            enterPressed = true;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_P){
+            pPressed = true;
+        }
     }
 
     @Override
@@ -55,6 +60,12 @@ public class Game extends JFrame implements KeyListener {
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             rightPressed = false;
         }
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            enterPressed = false;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_P){
+            pPressed = false;
+        }
     }
 
     public boolean isSpacePressed(){
@@ -67,6 +78,12 @@ public class Game extends JFrame implements KeyListener {
 
     public boolean isRightPressed(){
         return rightPressed;
+    }
+    public boolean isEnterPressed(){
+        return enterPressed;
+    }
+    public boolean isPPressed(){
+        return pPressed;
     }
 }
 
